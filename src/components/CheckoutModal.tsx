@@ -52,29 +52,32 @@ const CheckoutModal = ({ onClose }: CheckoutModalProps) => {
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4" onClick={onClose}>
-      <div className="absolute inset-0 bg-foreground/50 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-foreground/40 backdrop-blur-sm" />
       <div
-        className="relative bg-card rounded-2xl shadow-xl max-w-md w-full animate-fade-in"
+        className="relative bg-card shadow-xl max-w-md w-full animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose} className="absolute top-4 right-4 p-1.5 rounded-full bg-muted hover:bg-border transition-colors" aria-label="Close">
-          <X className="w-5 h-5" />
+        <button onClick={onClose} className="absolute top-4 right-4 p-2 hover:bg-muted transition-colors" aria-label="Close">
+          <X className="w-4 h-4" />
         </button>
 
-        <div className="p-6">
-          <h2 className="font-heading text-2xl font-bold text-foreground mb-1">Checkout</h2>
-          <p className="font-body text-sm text-muted-foreground mb-6">
-            Fill in your details and the order will be sent via WhatsApp
+        <div className="p-8">
+          <p className="font-body text-[10px] uppercase tracking-editorial text-muted-foreground mb-2">
+            Order Summary
+          </p>
+          <h2 className="font-heading text-3xl text-foreground mb-1">Checkout</h2>
+          <p className="font-body text-sm text-muted-foreground mb-8">
+            Fill in your details — your order will be sent via WhatsApp
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {[
               { key: "name", label: "Full Name", placeholder: "John Doe", type: "text" },
               { key: "contact", label: "Contact Number", placeholder: "+44 ...", type: "tel" },
               { key: "address", label: "Delivery Address", placeholder: "123 High Street, London", type: "text" },
             ].map((field) => (
               <div key={field.key}>
-                <label className="font-body text-sm font-medium text-foreground mb-1 block">
+                <label className="font-body text-[10px] uppercase tracking-editorial text-muted-foreground mb-2 block">
                   {field.label}
                 </label>
                 {field.key === "address" ? (
@@ -83,7 +86,7 @@ const CheckoutModal = ({ onClose }: CheckoutModalProps) => {
                     onChange={(e) => update(field.key, e.target.value)}
                     placeholder={field.placeholder}
                     rows={3}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-2.5 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                    className="w-full border border-input bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors resize-none"
                   />
                 ) : (
                   <input
@@ -91,7 +94,7 @@ const CheckoutModal = ({ onClose }: CheckoutModalProps) => {
                     value={form[field.key as keyof typeof form]}
                     onChange={(e) => update(field.key, e.target.value)}
                     placeholder={field.placeholder}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-2.5 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full border border-input bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors"
                   />
                 )}
                 {errors[field.key] && (
@@ -100,18 +103,18 @@ const CheckoutModal = ({ onClose }: CheckoutModalProps) => {
               </div>
             ))}
 
-            <div className="bg-muted rounded-lg p-3 mt-2">
+            <div className="border-t border-border pt-4 mt-2">
               <div className="flex justify-between font-body text-sm">
                 <span className="text-muted-foreground">{items.length} item(s)</span>
-                <span className="font-bold text-foreground">£{totalPrice.toFixed(2)}</span>
+                <span className="font-heading text-xl text-foreground">£{totalPrice.toFixed(2)}</span>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-accent-foreground py-3 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+              className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-accent-foreground py-3.5 font-body font-medium text-[10px] uppercase tracking-editorial hover:opacity-90 transition-opacity"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-3.5 h-3.5" />
               Send Order via WhatsApp
             </button>
           </form>

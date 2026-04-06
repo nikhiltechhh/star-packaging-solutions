@@ -1,25 +1,25 @@
-import { Phone, Mail, Globe, MapPin } from "lucide-react";
+import { Phone, Mail, Globe } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => (
-  <footer id="contact" className="bg-primary text-primary-foreground">
-    <div className="container mx-auto px-4 py-16">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+  <footer id="contact" className="bg-foreground text-background">
+    <div className="container mx-auto px-6 lg:px-12 py-20">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
         <div>
-          <img src={logo} alt="Star Packaging" className="h-14 w-auto mb-4 brightness-200" />
-          <p className="font-body text-sm text-primary-foreground/70 leading-relaxed">
-            Premium packaging solutions for businesses across the UK. Quality, sustainability, and innovation in every product.
+          <img src={logo} alt="Star Packaging" className="h-12 w-auto mb-6 brightness-200" />
+          <p className="font-body text-sm text-background/50 leading-relaxed">
+            Premium packaging solutions for businesses across the UK.
           </p>
         </div>
 
         <div>
-          <h4 className="font-heading text-lg font-semibold mb-4">Quick Links</h4>
-          <nav className="flex flex-col gap-2">
+          <h4 className="font-body text-[10px] uppercase tracking-editorial text-background/40 mb-6">Quick Links</h4>
+          <nav className="flex flex-col gap-3">
             {["Home", "About", "Products", "Contact"].map((l) => (
               <a
                 key={l}
                 href={`#${l.toLowerCase()}`}
-                className="font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                className="font-body text-sm text-background/60 hover:text-background transition-colors"
               >
                 {l}
               </a>
@@ -28,33 +28,33 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="font-heading text-lg font-semibold mb-4">Categories</h4>
-          <nav className="flex flex-col gap-2">
+          <h4 className="font-body text-[10px] uppercase tracking-editorial text-background/40 mb-6">Categories</h4>
+          <nav className="flex flex-col gap-3">
             {["Bags Collection", "Food Packaging", "Gift Boxes", "Eco-Friendly"].map((c) => (
-              <span key={c} className="font-body text-sm text-primary-foreground/70">{c}</span>
+              <span key={c} className="font-body text-sm text-background/60">{c}</span>
             ))}
           </nav>
         </div>
 
         <div>
-          <h4 className="font-heading text-lg font-semibold mb-4">Get in Touch</h4>
+          <h4 className="font-body text-[10px] uppercase tracking-editorial text-background/40 mb-6">Get in Touch</h4>
           <div className="space-y-3">
-            <a href="tel:+447456519238" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              <Phone className="w-4 h-4 shrink-0" /> +44 7456 519238
+            <a href="tel:+447456519238" className="flex items-center gap-3 font-body text-sm text-background/60 hover:text-background transition-colors">
+              <Phone className="w-4 h-4 shrink-0 stroke-[1.5]" /> +44 7456 519238
             </a>
-            <a href="mailto:starpackaging.bm@gmail.com" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              <Mail className="w-4 h-4 shrink-0" /> starpackaging.bm@gmail.com
+            <a href="mailto:starpackaging.bm@gmail.com" className="flex items-center gap-3 font-body text-sm text-background/60 hover:text-background transition-colors">
+              <Mail className="w-4 h-4 shrink-0 stroke-[1.5]" /> starpackaging.bm@gmail.com
             </a>
-            <a href="https://www.starpackaging.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              <Globe className="w-4 h-4 shrink-0" /> www.starpackaging.com
+            <a href="https://www.starpackaging.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-body text-sm text-background/60 hover:text-background transition-colors">
+              <Globe className="w-4 h-4 shrink-0 stroke-[1.5]" /> www.starpackaging.com
             </a>
           </div>
         </div>
       </div>
     </div>
-    <div className="border-t border-primary-foreground/10">
-      <div className="container mx-auto px-4 py-4">
-        <p className="font-body text-xs text-center text-primary-foreground/50">
+    <div className="border-t border-background/10">
+      <div className="container mx-auto px-6 lg:px-12 py-5">
+        <p className="font-body text-[10px] text-center text-background/30 uppercase tracking-editorial">
           © {new Date().getFullYear()} Star Packaging. All rights reserved.
         </p>
       </div>

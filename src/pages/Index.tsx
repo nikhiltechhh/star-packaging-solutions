@@ -9,7 +9,7 @@ import { CartProvider } from "@/context/CartContext";
 const Index = () => (
   <CartProvider>
     <Header />
-    <main className="pt-[88px]">
+    <main>
       <Hero />
       <About />
       <Products />
