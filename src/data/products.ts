@@ -1,0 +1,185 @@
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  subcategory: string;
+  price: number;
+  size: string;
+  description: string;
+  image: string;
+}
+
+export const categories = [
+  "All",
+  "Bags Collection",
+  "Food Packaging Boxes",
+  "Gift & Specialty Boxes",
+  "Eco-Friendly Solutions",
+] as const;
+
+export const products: Product[] = [
+  // Bags Collection
+  {
+    id: "pb-1",
+    name: "Pharmacy Paper Bags",
+    category: "Bags Collection",
+    subcategory: "Pharmacy Bags",
+    price: 12.99,
+    size: "Small (8×5×10 cm)",
+    description: "Professional pharmacy paper bags with secure fold-over closure. Ideal for dispensing medications safely. Made from durable kraft paper with optional custom branding.",
+    image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400&h=400&fit=crop",
+  },
+  {
+    id: "pb-2",
+    name: "Pharmacy Bags – Large",
+    category: "Bags Collection",
+    subcategory: "Pharmacy Bags",
+    price: 18.99,
+    size: "Large (12×8×15 cm)",
+    description: "Larger pharmacy bags for bulkier prescriptions and health products. Features reinforced bottom and printed dosage instruction area.",
+    image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=400&fit=crop",
+  },
+  {
+    id: "tb-1",
+    name: "Reusable Tote Bags",
+    category: "Bags Collection",
+    subcategory: "Tote Bags",
+    price: 3.49,
+    size: "Standard (38×42 cm)",
+    description: "Eco-friendly reusable tote bags crafted from premium cotton canvas. Perfect for retail branding, grocery shopping, and promotional giveaways.",
+    image: "https://images.unsplash.com/photo-1597484661973-ee6cd0b6482c?w=400&h=400&fit=crop",
+  },
+  {
+    id: "nw-1",
+    name: "Non-Woven Carry Bags",
+    category: "Bags Collection",
+    subcategory: "Non-Woven Bags",
+    price: 2.99,
+    size: "Medium (30×35 cm)",
+    description: "Lightweight yet durable non-woven polypropylene bags. Water-resistant, reusable, and available in a wide range of vibrant colours.",
+    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop",
+  },
+  {
+    id: "gb-1",
+    name: "Premium Gift Bags",
+    category: "Bags Collection",
+    subcategory: "Gift Bags",
+    price: 4.99,
+    size: "Medium (25×30×12 cm)",
+    description: "Luxurious gift bags with satin ribbon handles. Available in metallic, matte, and glossy finishes to elevate every occasion.",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238f3ed?w=400&h=400&fit=crop",
+  },
+  // Food Packaging Boxes
+  {
+    id: "pz-1",
+    name: "Pizza Boxes",
+    category: "Food Packaging Boxes",
+    subcategory: "Pizza Boxes",
+    price: 0.89,
+    size: "12 inch",
+    description: "Corrugated pizza boxes with grease-resistant inner coating. Keeps pizzas hot and fresh with excellent ventilation design.",
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=400&fit=crop",
+  },
+  {
+    id: "pz-2",
+    name: "Pizza Boxes – Family",
+    category: "Food Packaging Boxes",
+    subcategory: "Pizza Boxes",
+    price: 1.29,
+    size: "16 inch",
+    description: "Extra-large family-size pizza boxes. Sturdy double-wall corrugated construction for maximum protection during delivery.",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop",
+  },
+  {
+    id: "ck-1",
+    name: "Cake Boxes",
+    category: "Food Packaging Boxes",
+    subcategory: "Cake Boxes",
+    price: 2.49,
+    size: "8 inch round",
+    description: "Elegant cake boxes with clear window lids for showcase presentation. Food-safe board with reinforced base for tiered cakes.",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop",
+  },
+  {
+    id: "pc-1",
+    name: "Popcorn Boxes",
+    category: "Food Packaging Boxes",
+    subcategory: "Popcorn Boxes",
+    price: 0.59,
+    size: "Small (7×7×16 cm)",
+    description: "Classic striped popcorn boxes perfect for cinemas, carnivals, and party events. Grease-proof lining keeps contents fresh.",
+    image: "https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=400&h=400&fit=crop",
+  },
+  {
+    id: "ch-1",
+    name: "Chicken Boxes",
+    category: "Food Packaging Boxes",
+    subcategory: "Chicken Boxes",
+    price: 0.79,
+    size: "Regular (15×10×7 cm)",
+    description: "Ventilated chicken boxes that maintain crispiness. Heat-resistant construction with easy-open tabs and custom print options.",
+    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=400&fit=crop",
+  },
+  {
+    id: "bg-1",
+    name: "Burger Boxes",
+    category: "Food Packaging Boxes",
+    subcategory: "Burger Boxes",
+    price: 0.69,
+    size: "Standard (12×12×8 cm)",
+    description: "Clamshell burger boxes with secure locking mechanism. Made from food-grade board with optional eco-friendly coating.",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=400&fit=crop",
+  },
+  {
+    id: "as-1",
+    name: "Asian Sweets Boxes",
+    category: "Food Packaging Boxes",
+    subcategory: "Asian Sweets Boxes",
+    price: 3.99,
+    size: "1 kg capacity",
+    description: "Beautifully designed boxes for traditional Asian sweets and mithai. Features ornate patterns and gold foil detailing with food-safe interior.",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop",
+  },
+  // Gift & Specialty Boxes
+  {
+    id: "gx-1",
+    name: "Luxury Gift Boxes",
+    category: "Gift & Specialty Boxes",
+    subcategory: "Gift Boxes",
+    price: 8.99,
+    size: "Medium (20×20×10 cm)",
+    description: "Premium rigid gift boxes with magnetic closure. Lined with satin fabric and finished with a luxurious soft-touch coating.",
+    image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=400&h=400&fit=crop",
+  },
+  {
+    id: "gx-2",
+    name: "Decorative Boxes",
+    category: "Gift & Specialty Boxes",
+    subcategory: "Decorative Boxes",
+    price: 6.49,
+    size: "Large (25×18×12 cm)",
+    description: "Artistic decorative boxes with intricate embossed patterns. Perfect for weddings, festivals, and corporate gifting.",
+    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&h=400&fit=crop",
+  },
+  // Eco-Friendly Solutions
+  {
+    id: "bg-eco-1",
+    name: "Bagasse Containers",
+    category: "Eco-Friendly Solutions",
+    subcategory: "Bagasse Products",
+    price: 0.45,
+    size: "500 ml",
+    description: "100% biodegradable sugarcane bagasse containers. Microwave-safe, freezer-friendly, and fully compostable within 90 days.",
+    image: "https://images.unsplash.com/photo-1610024062303-e355e94c7a8c?w=400&h=400&fit=crop",
+  },
+  {
+    id: "bg-eco-2",
+    name: "Bagasse Plates",
+    category: "Eco-Friendly Solutions",
+    subcategory: "Bagasse Products",
+    price: 0.35,
+    size: "9 inch round",
+    description: "Sturdy bagasse plates ideal for hot and cold foods. Oil and water-resistant, perfect for catering and takeaway services.",
+    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=400&fit=crop",
+  },
+];
