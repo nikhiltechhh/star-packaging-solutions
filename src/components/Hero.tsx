@@ -6,12 +6,12 @@ import hero3 from "@/assets/hero-3.jpg";
 
 const slides = [
   {
-    image: hero1,
+    image: "https://i.pinimg.com/1200x/e9/40/e7/e940e7dd8b691afcd5720546c1283737.jpg",
     title: "Premium Packaging\nSolutions",
     subtitle: "Quality bags, boxes & eco-friendly packaging for every industry",
   },
   {
-    image: hero2,
+    image: "https://i.pinimg.com/1200x/da/c2/48/dac248262f6e185a4736a2c944d541b5.jpg",
     title: "Eco-Friendly &\nSustainable",
     subtitle: "Biodegradable bagasse products and recyclable packaging options",
   },
@@ -45,7 +45,7 @@ const Hero = () => {
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover scale-105"
+            className="w-full h-full object-cover"
             width={1920}
             height={1080}
           />
@@ -54,23 +54,24 @@ const Hero = () => {
       ))}
 
       <div className="relative z-10 h-full container mx-auto px-6 lg:px-12 flex items-center justify-center text-center">
-        <div className="max-w-3xl">
-          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-primary-foreground leading-[1.1] whitespace-pre-line mb-8 animate-fade-up">
+        <div className="max-w-3xl w-full">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-primary-foreground leading-[1.1] whitespace-pre-line mb-6 sm:mb-8 animate-fade-up">
             {slides[current].title}
           </h1>
-          <p className="font-body text-sm sm:text-base text-primary-foreground/75 mb-10 max-w-xl mx-auto tracking-wide leading-relaxed">
+          <p className="font-body text-sm sm:text-base text-primary-foreground/75 mb-8 sm:mb-10 max-w-xl mx-auto tracking-wide leading-relaxed">
             {slides[current].subtitle}
           </p>
-          <div className="flex justify-center gap-6">
+          {/* Buttons: always side-by-side, wrap on very small screens */}
+          <div className="flex flex-row flex-wrap justify-center gap-3 sm:gap-6">
             <a
               href="#products"
-              className="inline-flex items-center bg-primary-foreground text-foreground px-10 py-3.5 font-body font-medium text-[11px] uppercase tracking-editorial hover:bg-primary-foreground/90 transition-colors"
+              className="inline-flex items-center bg-primary-foreground text-foreground px-7 sm:px-10 py-3 sm:py-3.5 font-body font-medium text-[11px] uppercase tracking-editorial hover:bg-primary-foreground/90 transition-colors whitespace-nowrap"
             >
               Shop Now
             </a>
             <a
               href="#about"
-              className="inline-flex items-center border border-primary-foreground/40 text-primary-foreground px-10 py-3.5 font-body font-medium text-[11px] uppercase tracking-editorial hover:bg-primary-foreground/10 transition-colors"
+              className="inline-flex items-center border border-primary-foreground/40 text-primary-foreground px-7 sm:px-10 py-3 sm:py-3.5 font-body font-medium text-[11px] uppercase tracking-editorial hover:bg-primary-foreground/10 transition-colors whitespace-nowrap"
             >
               Learn More
             </a>
@@ -81,21 +82,21 @@ const Hero = () => {
       {/* Arrows */}
       <button
         onClick={() => go(-1)}
-        className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 z-10 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+        className="absolute left-4 lg:left-12 top-1/2 -translate-y-1/2 z-10 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-8 h-8 stroke-[1]" />
+        <ChevronLeft className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1]" />
       </button>
       <button
         onClick={() => go(1)}
-        className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 z-10 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+        className="absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 z-10 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-8 h-8 stroke-[1]" />
+        <ChevronRight className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1]" />
       </button>
 
       {/* Slide counter */}
-      <div className="absolute bottom-10 right-6 lg:right-12 z-10 flex flex-col items-end gap-2">
+      <div className="absolute bottom-8 sm:bottom-10 right-4 lg:right-12 z-10 flex flex-col items-end gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
