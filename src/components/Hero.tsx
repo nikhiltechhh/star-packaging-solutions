@@ -26,7 +26,7 @@ const Hero = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 5000);
+    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -34,43 +34,43 @@ const Hero = () => {
     setCurrent((p) => (p + dir + slides.length) % slides.length);
 
   return (
-    <section id="home" className="relative h-[85vh] min-h-[500px] overflow-hidden">
+    <section id="home" className="relative h-screen min-h-[600px] overflow-hidden">
       {slides.map((slide, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ${
             i === current ? "opacity-100" : "opacity-0"
           }`}
         >
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105"
             width={1920}
-            height={900}
+            height={1080}
           />
           <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
         </div>
       ))}
 
-      <div className="relative z-10 h-full container mx-auto px-4 flex items-center">
-        <div className="max-w-2xl">
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight whitespace-pre-line mb-6">
+      <div className="relative z-10 h-full container mx-auto px-6 lg:px-12 flex items-center justify-center text-center">
+        <div className="max-w-3xl">
+          <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-primary-foreground leading-[1.1] whitespace-pre-line mb-8 animate-fade-up">
             {slides[current].title}
           </h1>
-          <p className="font-body text-lg sm:text-xl text-primary-foreground/85 mb-8 max-w-lg">
+          <p className="font-body text-sm sm:text-base text-primary-foreground/75 mb-10 max-w-xl mx-auto tracking-wide leading-relaxed">
             {slides[current].subtitle}
           </p>
-          <div className="flex gap-4">
+          <div className="flex justify-center gap-6">
             <a
               href="#products"
-              className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+              className="inline-flex items-center bg-primary-foreground text-foreground px-10 py-3.5 font-body font-medium text-[11px] uppercase tracking-editorial hover:bg-primary-foreground/90 transition-colors"
             >
               Shop Now
             </a>
             <a
               href="#about"
-              className="inline-flex items-center gap-2 border-2 border-primary-foreground/40 text-primary-foreground px-8 py-3 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:bg-primary-foreground/10 transition-colors"
+              className="inline-flex items-center border border-primary-foreground/40 text-primary-foreground px-10 py-3.5 font-body font-medium text-[11px] uppercase tracking-editorial hover:bg-primary-foreground/10 transition-colors"
             >
               Learn More
             </a>
@@ -78,33 +78,37 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Nav arrows */}
+      {/* Arrows */}
       <button
         onClick={() => go(-1)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/30 transition-colors text-primary-foreground"
+        className="absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 z-10 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-8 h-8 stroke-[1]" />
       </button>
       <button
         onClick={() => go(1)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/30 transition-colors text-primary-foreground"
+        className="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 z-10 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-8 h-8 stroke-[1]" />
       </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+      {/* Slide counter */}
+      <div className="absolute bottom-10 right-6 lg:right-12 z-10 flex flex-col items-end gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              i === current ? "bg-accent w-8" : "bg-primary-foreground/40"
+            className={`font-body text-xs transition-all duration-300 ${
+              i === current
+                ? "text-primary-foreground"
+                : "text-primary-foreground/30 hover:text-primary-foreground/60"
             }`}
             aria-label={`Go to slide ${i + 1}`}
-          />
+          >
+            0{i + 1}
+          </button>
         ))}
       </div>
     </section>

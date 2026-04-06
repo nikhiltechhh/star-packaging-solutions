@@ -18,25 +18,27 @@ const Products = () => {
     setQuantities((prev) => ({ ...prev, [id]: Math.max(1, val) }));
 
   return (
-    <section id="products" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Our Products
+    <section id="products" className="py-24 lg:py-32 bg-muted/30">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16">
+          <p className="font-body text-[11px] uppercase tracking-editorial text-muted-foreground mb-4">
+            Our Collection
+          </p>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-foreground">
+            Products
           </h2>
-          <div className="w-20 h-1 bg-accent mx-auto mb-6 rounded-full" />
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-14">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`font-body text-sm px-5 py-2 rounded-full transition-all font-medium ${
+              className={`font-body text-[11px] uppercase tracking-editorial px-6 py-2.5 transition-all duration-300 border ${
                 activeCategory === cat
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-muted text-muted-foreground hover:bg-border"
+                  ? "bg-foreground text-background border-foreground"
+                  : "bg-transparent text-muted-foreground border-border hover:border-foreground hover:text-foreground"
               }`}
             >
               {cat}
@@ -45,71 +47,71 @@ const Products = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filtered.map((product) => (
             <div
               key={product.id}
-              className="group bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+              className="group bg-card border border-border overflow-hidden hover:shadow-lg transition-all duration-500"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden aspect-square">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                   width={400}
                   height={400}
                 />
                 <button
                   onClick={() => setSelectedProduct(product)}
-                  className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100"
                   aria-label="Quick view"
                 >
-                  <span className="bg-card text-foreground px-4 py-2 rounded-lg font-body text-sm font-medium flex items-center gap-2">
-                    <Eye className="w-4 h-4" /> Quick View
+                  <span className="bg-background text-foreground px-5 py-2.5 font-body text-[10px] font-medium uppercase tracking-editorial flex items-center gap-2">
+                    <Eye className="w-3.5 h-3.5" /> Quick View
                   </span>
                 </button>
               </div>
 
-              <div className="p-4">
-                <span className="font-body text-[11px] uppercase tracking-wider text-accent font-semibold">
+              <div className="p-5">
+                <span className="font-body text-[10px] uppercase tracking-editorial text-accent font-medium">
                   {product.subcategory}
                 </span>
-                <h3 className="font-heading text-lg font-semibold text-foreground mt-1 mb-1 line-clamp-1">
+                <h3 className="font-heading text-xl text-foreground mt-2 mb-1 line-clamp-1">
                   {product.name}
                 </h3>
-                <p className="font-body text-xs text-muted-foreground mb-3">{product.size}</p>
+                <p className="font-body text-xs text-muted-foreground mb-4">{product.size}</p>
 
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-heading text-xl font-bold text-primary">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-heading text-2xl text-foreground">
                     £{product.price.toFixed(2)}
                   </span>
-                  <div className="flex items-center border border-border rounded-lg">
+                  <div className="flex items-center border border-border">
                     <button
                       onClick={() => setQty(product.id, getQty(product.id) - 1)}
-                      className="p-1.5 hover:bg-muted transition-colors rounded-l-lg"
+                      className="p-2 hover:bg-muted transition-colors"
                       aria-label="Decrease"
                     >
-                      <Minus className="w-3.5 h-3.5" />
+                      <Minus className="w-3 h-3" />
                     </button>
-                    <span className="w-8 text-center font-body text-sm font-semibold">
+                    <span className="w-8 text-center font-body text-xs font-medium">
                       {getQty(product.id)}
                     </span>
                     <button
                       onClick={() => setQty(product.id, getQty(product.id) + 1)}
-                      className="p-1.5 hover:bg-muted transition-colors rounded-r-lg"
+                      className="p-2 hover:bg-muted transition-colors"
                       aria-label="Increase"
                     >
-                      <Plus className="w-3.5 h-3.5" />
+                      <Plus className="w-3 h-3" />
                     </button>
                   </div>
                 </div>
 
                 <button
                   onClick={() => addToCart(product, getQty(product.id))}
-                  className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground py-2.5 rounded-lg font-body font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+                  className="w-full flex items-center justify-center gap-2 bg-foreground text-background py-3 font-body font-medium text-[10px] uppercase tracking-editorial hover:bg-foreground/90 transition-colors"
                 >
-                  <ShoppingCart className="w-4 h-4" />
+                  <ShoppingCart className="w-3.5 h-3.5" />
                   Add to Cart
                 </button>
               </div>
