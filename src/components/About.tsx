@@ -1,10 +1,10 @@
-import { Package, Leaf, Truck, Award } from "lucide-react";
+import { Lightbulb, Target, Eye, Factory } from "lucide-react";
 
-const features = [
-  { icon: Package, title: "Wide Range", description: "Bags, food boxes, gift packaging and more for every business need" },
-  { icon: Leaf, title: "Eco-Friendly", description: "Sustainable bagasse and biodegradable solutions for a greener future" },
-  { icon: Truck, title: "Fast Delivery", description: "Reliable UK-wide delivery with bulk order discounts available" },
-  { icon: Award, title: "Premium Quality", description: "Food-safe, durable materials with custom branding options" },
+const values = [
+  { icon: Lightbulb, title: "Innovation", description: "Continuously developing smarter, more effective packaging solutions for evolving industries" },
+  { icon: Target, title: "Reliability", description: "Consistent quality and on-time delivery that businesses across the UK depend on every day" },
+  { icon: Eye, title: "Sustainability", description: "Leading the way with eco-friendly innovations that reduce environmental impact at scale" },
+  { icon: Factory, title: "Infrastructure", description: "Modern facility with advanced printing, cutting technology and scalable production capacity" },
 ];
 
 const industries = ["Pharmaceutical", "Food & Beverage", "Retail & FMCG", "E-commerce"];
@@ -19,27 +19,52 @@ const About = () => (
             About Star Packaging
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-foreground leading-[1.15] mb-6">
-            Getting to Know Us and Our Vision for Packaging
+            Our Story
           </h2>
           <div className="w-16 h-[1px] bg-accent mb-8" />
-          <p className="font-body text-muted-foreground leading-[1.8] text-[15px]">
-            Star Packaging is a leading supplier of premium packaging solutions in the UK.
-            From pharmacy bags to eco-friendly containers, we deliver quality products
-            that protect your goods and elevate your brand. Building genuine partnerships
-            with our clients is at the heart of everything we do. We take the time to
-            understand your needs, your industry, and your customers — so every product
-            we provide feels right.
+
+          {/* Company Story */}
+          <p className="font-body text-muted-foreground leading-[1.8] text-[15px] mb-8">
+            Founded with a vision to revolutionize product packaging, Star Packaging has evolved
+            into a comprehensive solution provider across pharmaceutical, food service, retail,
+            and gifting sectors. Building genuine partnerships with our clients is at the heart
+            of everything we do — we take the time to understand your needs, your industry, and
+            your customers.
           </p>
+
+          {/* Mission & Vision stacked */}
+          <div className="space-y-6">
+            <div className="border-l-2 border-accent pl-5">
+              <p className="font-body text-[11px] uppercase tracking-editorial text-muted-foreground mb-1">
+                Mission
+              </p>
+              <p className="font-body text-[15px] text-foreground leading-[1.7]">
+                To be the most trusted packaging partner by delivering innovative, reliable,
+                and sustainable solutions.
+              </p>
+            </div>
+            <div className="border-l-2 border-accent pl-5">
+              <p className="font-body text-[11px] uppercase tracking-editorial text-muted-foreground mb-1">
+                Vision
+              </p>
+              <p className="font-body text-[15px] text-foreground leading-[1.7]">
+                To lead the packaging industry through eco-friendly innovations and
+                unmatched quality standards.
+              </p>
+            </div>
+          </div>
         </div>
+
+        {/* Core Values & Infrastructure grid */}
         <div className="grid grid-cols-2 gap-6">
-          {features.map((f) => (
+          {values.map((v) => (
             <div
-              key={f.title}
+              key={v.title}
               className="group p-6 border border-border hover:border-accent/30 transition-colors duration-300"
             >
-              <f.icon className="w-6 h-6 text-accent mb-4 stroke-[1.5]" />
-              <h3 className="font-heading text-lg text-foreground mb-2">{f.title}</h3>
-              <p className="font-body text-xs text-muted-foreground leading-relaxed">{f.description}</p>
+              <v.icon className="w-6 h-6 text-accent mb-4 stroke-[1.5]" />
+              <h3 className="font-heading text-lg text-foreground mb-2">{v.title}</h3>
+              <p className="font-body text-xs text-muted-foreground leading-relaxed">{v.description}</p>
             </div>
           ))}
         </div>

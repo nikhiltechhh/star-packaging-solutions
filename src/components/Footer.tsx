@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container mx-auto px-6 lg:px-12 py-20">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
         <div>
-          <img src={logo} alt="Star Packaging" className="h-12 w-auto mb-6 brightness-200" />
+          <img src="https://i.ibb.co/r2Rt6TGW/STAR.png" alt="Star Packaging" className="h-12 w-auto mb-6 brightness-200" />
           <p className="font-body text-sm text-background/50 leading-relaxed">
             Premium packaging solutions for businesses across the UK.
           </p>

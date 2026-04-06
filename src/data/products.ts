@@ -27,7 +27,7 @@ export const products: Product[] = [
     price: 12.99,
     size: "Small (8×5×10 cm)",
     description: "Professional pharmacy paper bags with secure fold-over closure. Ideal for dispensing medications safely. Made from durable kraft paper with optional custom branding.",
-    image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/fa/32/af/fa32afb2669b0e8a8423d60e6ff27061.jpg",
   },
   {
     id: "pb-2",
@@ -37,7 +37,7 @@ export const products: Product[] = [
     price: 18.99,
     size: "Large (12×8×15 cm)",
     description: "Larger pharmacy bags for bulkier prescriptions and health products. Features reinforced bottom and printed dosage instruction area.",
-    image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/fa/32/af/fa32afb2669b0e8a8423d60e6ff27061.jpg",
   },
   {
     id: "tb-1",
@@ -47,7 +47,7 @@ export const products: Product[] = [
     price: 3.49,
     size: "Standard (38×42 cm)",
     description: "Eco-friendly reusable tote bags crafted from premium cotton canvas. Perfect for retail branding, grocery shopping, and promotional giveaways.",
-    image: "https://images.unsplash.com/photo-1597484661973-ee6cd0b6482c?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/9f/ad/1e/9fad1e147d5f489ae5adbba2ce268230.jpg",
   },
   {
     id: "nw-1",
@@ -57,7 +57,7 @@ export const products: Product[] = [
     price: 2.99,
     size: "Medium (30×35 cm)",
     description: "Lightweight yet durable non-woven polypropylene bags. Water-resistant, reusable, and available in a wide range of vibrant colours.",
-    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/d8/16/bd/d816bd246b7341ac1ace2c2bc10a4092.jpg",
   },
   {
     id: "gb-1",
@@ -67,7 +67,7 @@ export const products: Product[] = [
     price: 4.99,
     size: "Medium (25×30×12 cm)",
     description: "Luxurious gift bags with satin ribbon handles. Available in metallic, matte, and glossy finishes to elevate every occasion.",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238f3ed?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/736x/61/14/cc/6114cc7009e4d40e650046ade71807c5.jpg",
   },
   // Food Packaging Boxes
   {
@@ -78,7 +78,7 @@ export const products: Product[] = [
     price: 0.89,
     size: "12 inch",
     description: "Corrugated pizza boxes with grease-resistant inner coating. Keeps pizzas hot and fresh with excellent ventilation design.",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/36/72/67/3672675a9c69946c9a08eae8d4502cfc.jpg",
   },
   {
     id: "pz-2",
@@ -88,7 +88,7 @@ export const products: Product[] = [
     price: 1.29,
     size: "16 inch",
     description: "Extra-large family-size pizza boxes. Sturdy double-wall corrugated construction for maximum protection during delivery.",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/736x/80/7a/e9/807ae98b6989e7752942b940f4c6d99c.jpg",
   },
   {
     id: "ck-1",
@@ -98,7 +98,7 @@ export const products: Product[] = [
     price: 2.49,
     size: "8 inch round",
     description: "Elegant cake boxes with clear window lids for showcase presentation. Food-safe board with reinforced base for tiered cakes.",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/736x/d7/24/45/d724459856227f76f0cc897d02380f7f.jpg",
   },
   {
     id: "pc-1",
@@ -108,7 +108,7 @@ export const products: Product[] = [
     price: 0.59,
     size: "Small (7×7×16 cm)",
     description: "Classic striped popcorn boxes perfect for cinemas, carnivals, and party events. Grease-proof lining keeps contents fresh.",
-    image: "https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/c8/80/94/c88094e27589869460c0283dc2e22b61.jpg",
   },
   {
     id: "ch-1",
@@ -118,7 +118,7 @@ export const products: Product[] = [
     price: 0.79,
     size: "Regular (15×10×7 cm)",
     description: "Ventilated chicken boxes that maintain crispiness. Heat-resistant construction with easy-open tabs and custom print options.",
-    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/e7/fc/e6/e7fce6b21da0d7f95e9216392028d403.jpg",
   },
   {
     id: "bg-1",
@@ -128,7 +128,7 @@ export const products: Product[] = [
     price: 0.69,
     size: "Standard (12×12×8 cm)",
     description: "Clamshell burger boxes with secure locking mechanism. Made from food-grade board with optional eco-friendly coating.",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/a1/02/bd/a102bd53007e829f45fd1898b0dc01d9.jpg",
   },
   {
     id: "as-1",
@@ -138,7 +138,7 @@ export const products: Product[] = [
     price: 3.99,
     size: "1 kg capacity",
     description: "Beautifully designed boxes for traditional Asian sweets and mithai. Features ornate patterns and gold foil detailing with food-safe interior.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/736x/1c/e4/a6/1ce4a6752802a9c219130b4b059b96f0.jpg",
   },
   // Gift & Specialty Boxes
   {
@@ -149,7 +149,7 @@ export const products: Product[] = [
     price: 8.99,
     size: "Medium (20×20×10 cm)",
     description: "Premium rigid gift boxes with magnetic closure. Lined with satin fabric and finished with a luxurious soft-touch coating.",
-    image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/b9/92/d6/b992d643f300df61f5b48686db13c312.jpg",
   },
   {
     id: "gx-2",
@@ -159,7 +159,7 @@ export const products: Product[] = [
     price: 6.49,
     size: "Large (25×18×12 cm)",
     description: "Artistic decorative boxes with intricate embossed patterns. Perfect for weddings, festivals, and corporate gifting.",
-    image: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/736x/e3/73/a4/e373a4c7be6432e44f1924828d2480ce.jpg",
   },
   // Eco-Friendly Solutions
   {
@@ -170,7 +170,7 @@ export const products: Product[] = [
     price: 0.45,
     size: "500 ml",
     description: "100% biodegradable sugarcane bagasse containers. Microwave-safe, freezer-friendly, and fully compostable within 90 days.",
-    image: "https://images.unsplash.com/photo-1610024062303-e355e94c7a8c?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/d0/3d/c8/d03dc802f8d3e0178098dfe629b0d9de.jpg",
   },
   {
     id: "bg-eco-2",
@@ -180,6 +180,6 @@ export const products: Product[] = [
     price: 0.35,
     size: "9 inch round",
     description: "Sturdy bagasse plates ideal for hot and cold foods. Oil and water-resistant, perfect for catering and takeaway services.",
-    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&h=400&fit=crop",
+    image: "https://i.pinimg.com/1200x/a1/00/46/a10046cf351d7eb08bb4cf413dae0afc.jpg",
   },
 ];
