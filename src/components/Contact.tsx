@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Phone, Mail, Globe, Clock, CheckCircle } from "lucide-react";
+import { Phone, Mail, Globe, CheckCircle, Instagram } from "lucide-react";
 
 const contactInfo = [
   { icon: Phone, label: "Phone", value: "+44 7456 519238", href: "tel:+447456519238" },
   { icon: Mail, label: "Email", value: "starpackaging.bm@gmail.com", href: "mailto:starpackaging.bm@gmail.com" },
   { icon: Globe, label: "Website", value: "www.starpackaging.com", href: "https://www.starpackaging.com" },
-//   { icon: Clock, label: "Working Hours", value: "To be confirmed", href: null },
+  { icon: Instagram, label: "Instagram", value: "@starpackaging", href: "https://www.instagram.com/starpackaging" },
 ];
 
 const productOptions = [
@@ -146,7 +146,7 @@ const Contact = () => {
               <p className="font-body text-[11px] uppercase tracking-editorial text-muted-foreground mb-3">
                 Prefer WhatsApp?
               </p>
-                <a
+              <a
                 href="https://wa.me/447456519238"
                 target="_blank"
                 rel="noreferrer"

@@ -82,7 +82,7 @@ const Products = () => {
                 </h3>
                 <p className="font-body text-xs text-muted-foreground mb-4">{product.size}</p>
 
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <span className="font-heading text-2xl text-foreground">
                     £{product.price.toFixed(2)}
                   </span>
@@ -105,6 +105,26 @@ const Products = () => {
                       <Plus className="w-3 h-3" />
                     </button>
                   </div>
+                </div>
+
+                {/* Bulk quantity presets */}
+                <div className="flex items-center gap-1.5 mb-4">
+                  <span className="font-body text-[9px] uppercase tracking-editorial text-muted-foreground mr-1">
+                    Bulk:
+                  </span>
+                  {[50, 100, 250, 500].map((bulk) => (
+                    <button
+                      key={bulk}
+                      onClick={() => setQty(product.id, bulk)}
+                      className={`font-body text-[9px] uppercase tracking-editorial px-2.5 py-1 border transition-all duration-200 ${
+                        getQty(product.id) === bulk
+                          ? "bg-foreground text-background border-foreground"
+                          : "bg-transparent text-muted-foreground border-border hover:border-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {bulk}
+                    </button>
+                  ))}
                 </div>
 
                 <button

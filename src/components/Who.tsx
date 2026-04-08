@@ -1,4 +1,5 @@
 import video from "@/assets/star.mp4";
+
 const Who = () => (
   <section id="who-we-are" className="py-24 lg:py-32 border-t border-border">
     <div className="container mx-auto px-6 lg:px-12">
@@ -37,13 +38,15 @@ const Who = () => (
           {/* Subtle accent border offset */}
           <div className="absolute -top-3 -right-3 w-full h-full border border-accent/20 pointer-events-none" />
           <div className="relative w-full overflow-hidden border border-border" style={{ aspectRatio: "16/9" }}>
-            <iframe
+            <video
               src={video}
-              title="Star Packaging — Brand Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-              style={{ display: "block", border: "none" }}
+              muted
+              autoPlay
+              loop
+              playsInline
+              controls
+              className="w-full h-full object-cover"
+              style={{ display: "block" }}
             />
           </div>
         </div>

@@ -25,7 +25,7 @@ const About = () => (
 
           {/* Company Story */}
           <p className="font-body text-muted-foreground leading-[1.8] text-[15px] mb-8">
-            Founded with a vision to revolutionize product packaging, Star Packaging has evolved
+            Founded with a vision to revolutionise product packaging, Star Packaging has evolved
             into a comprehensive solution provider across pharmaceutical, food service, retail,
             and gifting sectors. Building genuine partnerships with our clients is at the heart
             of everything we do — we take the time to understand your needs, your industry, and

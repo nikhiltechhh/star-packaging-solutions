@@ -20,16 +20,16 @@ const slides = [
     title: "Gift & Specialty\nPackaging",
     subtitle: "Luxury boxes and decorative packaging for unforgettable impressions",
   },
-  {
-    image:"https://i.ibb.co/cccpWVHw/Whats-App-Image-2026-04-05-at-11-12-43-AM-1.jpg",
-    title: "Paper Based Packaging Solutionsn",
-    subtitle: "Personalized packaging design and manufacturing to fit your brand",
-  },
-  {
-    image:"https://i.ibb.co/mVRmdPs2/Whats-App-Image-2026-04-05-at-11-12-43-AM.jpg",
-    title: "Custom Solutions\nTailored to You",
-    subtitle: "Personalized packaging design and manufacturing to fit your brand",
-  }
+  // {
+  //   image:"https://i.ibb.co/cccpWVHw/Whats-App-Image-2026-04-05-at-11-12-43-AM-1.jpg",
+  //   title: "Paper Based Packaging Solutionsn",
+  //   subtitle: "Personalized packaging design and manufacturing to fit your brand",
+  // },
+  // {
+  //   image:"https://i.ibb.co/mVRmdPs2/Whats-App-Image-2026-04-05-at-11-12-43-AM.jpg",
+  //   title: "Custom Solutions\nTailored to You",
+  //   subtitle: "Personalized packaging design and manufacturing to fit your brand",
+  // }
 ];
 
 const Hero = () => {
