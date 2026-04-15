@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Minus, Plus, ShoppingCart } from "lucide-react";
+import { X, Minus, Plus, ShoppingCart, Package } from "lucide-react";
 import type { Product } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
@@ -43,7 +43,11 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
 
           <div className="flex items-center justify-between mb-6 pb-6 border-b border-border">
             <span className="font-body text-xs text-muted-foreground uppercase tracking-wide">Size: {product.size}</span>
-            <span className="font-heading text-3xl text-foreground">£{product.price.toFixed(2)}</span>
+            {/* Customised Packaging label replaces price */}
+            <span className="inline-flex items-center gap-1.5 font-body text-[11px] uppercase tracking-editorial text-accent font-semibold">
+              <Package className="w-4 h-4" />
+              Customised Packaging
+            </span>
           </div>
 
           <div className="flex items-center gap-4">

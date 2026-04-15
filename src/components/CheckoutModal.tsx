@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Send } from "lucide-react";
+import { X, Send, Package } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { z } from "zod";
 
@@ -14,7 +14,7 @@ interface CheckoutModalProps {
 }
 
 const CheckoutModal = ({ onClose }: CheckoutModalProps) => {
-  const { items, totalPrice, clearCart, setIsCartOpen } = useCart();
+  const { items, clearCart, setIsCartOpen } = useCart();
   const [form, setForm] = useState({ name: "", contact: "", address: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -32,10 +32,10 @@ const CheckoutModal = ({ onClose }: CheckoutModalProps) => {
     }
 
     const orderLines = items
-      .map((i) => `• ${i.product.name} (${i.product.size}) x${i.quantity} — £${(i.product.price * i.quantity).toFixed(2)}`)
+      .map((i) => `• ${i.product.name} (${i.product.size}) x${i.quantity}`)
       .join("\n");
 
-    const message = `🛒 *New Order from Star Packaging*\n\n*Customer:* ${form.name}\n*Contact:* ${form.contact}\n*Address:* ${form.address}\n\n*Items:*\n${orderLines}\n\n*Total: £${totalPrice.toFixed(2)}*`;
+    const message = `🛒 *New Order from Star Packaging*\n\n*Customer:* ${form.name}\n*Contact:* ${form.contact}\n*Address:* ${form.address}\n\n*Items:*\n${orderLines}\n\n_Customised Packaging will be provided for this order._`;
 
     const whatsappUrl = `https://wa.me/447456519238?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -104,9 +104,12 @@ const CheckoutModal = ({ onClose }: CheckoutModalProps) => {
             ))}
 
             <div className="border-t border-border pt-4 mt-2">
-              <div className="flex justify-between font-body text-sm">
+              <div className="flex justify-between items-center font-body text-sm">
                 <span className="text-muted-foreground">{items.length} item(s)</span>
-                <span className="font-heading text-xl text-foreground">£{totalPrice.toFixed(2)}</span>
+                <span className="inline-flex items-center gap-1.5 font-body text-[10px] uppercase tracking-editorial text-accent font-semibold">
+                  <Package className="w-3.5 h-3.5" />
+                  Customised Packaging
+                </span>
               </div>
             </div>
 

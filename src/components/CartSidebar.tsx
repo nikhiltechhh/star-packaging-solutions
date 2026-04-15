@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { X, Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { X, Minus, Plus, Trash2, ShoppingBag, Package } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import CheckoutModal from "./CheckoutModal";
 
 const CartSidebar = () => {
-  const { items, updateQuantity, removeFromCart, totalPrice, isCartOpen, setIsCartOpen } = useCart();
+  const { items, updateQuantity, removeFromCart, isCartOpen, setIsCartOpen } = useCart();
   const [showCheckout, setShowCheckout] = useState(false);
 
   if (!isCartOpen) return null;
@@ -47,9 +47,11 @@ const CartSidebar = () => {
                       {product.name}
                     </h4>
                     <p className="font-body text-[10px] text-muted-foreground uppercase tracking-wide mt-0.5">{product.size}</p>
-                    <p className="font-heading text-lg text-foreground mt-1">
-                      £{(product.price * quantity).toFixed(2)}
-                    </p>
+                    {/* Customised Packaging label replaces per-item price */}
+                    <span className="inline-flex items-center gap-1.5 font-body text-[10px] uppercase tracking-editorial text-accent font-semibold mt-1">
+                      <Package className="w-3 h-3" />
+                      Customised Packaging
+                    </span>
                     <div className="flex items-center justify-between mt-2">
                       <div className="flex items-center border border-border">
                         <button onClick={() => updateQuantity(product.id, quantity - 1)} className="p-1.5 hover:bg-muted transition-colors" aria-label="Decrease">
@@ -74,9 +76,10 @@ const CartSidebar = () => {
         {items.length > 0 && (
           <div className="border-t border-border p-6 space-y-4">
             <div className="flex justify-between items-center">
-              <span className="font-body text-xs uppercase tracking-editorial text-muted-foreground">Total</span>
-              <span className="font-heading text-2xl text-foreground">
-                £{totalPrice.toFixed(2)}
+              <span className="font-body text-xs uppercase tracking-editorial text-muted-foreground">Packaging</span>
+              <span className="inline-flex items-center gap-1.5 font-body text-[11px] uppercase tracking-editorial text-accent font-semibold">
+                <Package className="w-3.5 h-3.5" />
+                Customised Packaging
               </span>
             </div>
             <button
