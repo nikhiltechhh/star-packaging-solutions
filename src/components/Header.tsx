@@ -15,19 +15,11 @@ const navLinks = [
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { totalItems, setIsCartOpen } = useCart();
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
-  const alwaysScrolled = pathname !== "/";
-  const isScrolled = alwaysScrolled || scrolled || mobileOpen;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const isScrolled = true;
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
